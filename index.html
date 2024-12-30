@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BASIR & UUM WEDDING</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- simplyCountdown -->
+    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css" />
+    <script src="countdown/simplyCountdown.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <section
+      id="hero"
+      class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
+    >
+      <main>
+        <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
+        <h1 id="name"></h1>
+        <p>Akan melangsungkan resepsi pernikahan dalam:</p>
+        <div class="simply-countdown"></div>
+        <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">
+          Lihat Undangan
+        </a>
+      </main>
+    </section>
+
+    <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">Uum&Basir</a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Dino</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="#info">Info</a>
+              <!-- <a class="nav-link" href="#story">Story</a> -->
+              <a class="nav-link" href="#gallery">Gallery</a>
+              <a class="nav-link" href="#rsvp">RSVP</a>
+              <a class="nav-link" href="#gifts">Gifts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="home">
+      <div class="container">
+        <div class="row text-center ayat mb-3">
+          <h3>Assalamualaikum Wr Wb</h3>
+          <div class="ayat">
+            <p class="text-center">
+              وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
+              لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً
+              وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
+              ۝٢١
+            </p>
+          </div>
+          <div class="arti">
+            <p class="text-center">
+              Dan di antara tanda-tanda kebesaran-Nya ialah bahwa Dia telah
+              menciptakan pasangan-pasangan untukmu, laki-laki dengan perempuan
+              dan sebaliknya, dari jenismu sendiri agar kamu cenderung dan
+              mempunyai rasa cinta kepadanya dan merasa tenteram bersamanya
+              setelah disatukan dalam ikatan pernikahan; dan sebagai wujud
+              rahmat-Nya. Dia menjadikan di antaramu potensi untuk memiliki rasa
+              kasih dan sayang kepada pasangannya sehingga keduanya harus saling
+              membantu untuk mewujudkannya demi terbentuknya bangunan rumah
+              tangga yang kukuh. Sungguh, pada yang demikian itu benar-benar
+              terdapat tanda-tanda kebesaran Allah bagi kaum yang berpikir bahwa
+              tumbuhnya rasa cinta adalah anugerah Allah yang harus dijaga dan
+              ditujukan ke arah yang benar dan melalui cara-cara yang benar
+              pula.
+            </p>
+          </div>
+        </div>
+
+        <div class="row couple mb-5">
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-8 text-end">
+                <h3>Muhammad Basir</h3>
+
+                <p>
+                  Putra dari Bpk. Sujarwo <br />
+                  dan <br />
+                  Ibu Lagiyem
+                </p>
+              </div>
+              <div class="col-4">
+                <img
+                  src="img/hero.jpg"
+                  alt="Muhammad Basir"
+                  class="img-responsive img-thumbnail"
+                />
+              </div>
+            </div>
+          </div>
+
+          <span class="heart"><i class="bi bi-heart-fill"></i></span>
+
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-4">
+                <img
+                  src="img/hero.jpg"
+                  alt="uum"
+                  class="img-responsive img-thumbnail"
+                />
+              </div>
+              <div class="col-8">
+                <h3>Lailatul Umroh</h3>
+                <p>
+                  Putri dari Bpk. Sanapi <br />
+                  dan <br />
+                  Ibu Sunariyah
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <h2>Akad Nikah & Resepsi</h2>
+            <h3>
+              Diselenggarakan pada 17 Januari 2025 di Blimbingsari, Banyuwangi, Jawa
+              Timur.
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="info" class="info">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Informasi Acara</h2>
+            <h5>Lokasi Akad Nikah</h5>
+            <p class="alamat">
+              Alamat: Blimbingsari, Kec. Blimbingsari, Kabupaten
+              Banyuwangi, Jawa Timur
+            </p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1788.0428290207788!2d114.35904406784212!3d-8.314224540412347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMTgnNTEuNiJTIDExNMKwMjEnMzQuNSJF!5e0!3m2!1sid!2sid!4v1735391962576!5m2!1sid!2sid" 
+              width="100%" 
+              height="250" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <a
+              href="https://maps.app.goo.gl/qADRkH71oJ7nrVkz5"
+              target="_blank"
+              class="btn btn-light btn-sm my-3"
+              >Klik untuk membuka peta</a
+            >
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-8 col-10">
+            <div class="card text-center text-bg-light mb-5">
+              <div class="card-header">Akad Nikah & Resepsi</div>
+              <div class="card-body">
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <i class="bi bi-clock d-block"></i>
+                    <span>08.30 - selesai</span>
+                  </div>
+                  <div class="col-md-6">
+                    <i class="bi bi-calendar3 d-block"></i>
+                    <span>Jum'at, 17 Januari 2025</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan
+                dan kekhusyuan seluruh prosesi.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="story" class="story">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Bagaimana Cinta Kami Bersemi</span>
+            <h2>Cerita Kami</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <ul class="timeline">
+              <li>
+                <div
+                  class="timeline-image"
+                  style="background-image: url(img/IMG_1630.JPG)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Pertama Bertemu</h3>
+                    <span>1 april 2023</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Kami pertama bertemu ketika perjalanan pulang dari malang
+                      ke banyuwangi naik motor
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div
+                  class="timeline-image"
+                  style="background-image: url(img/hhhh.jpeg)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Mulai Serius</h3>
+                    <span>5 juni 2024</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Pertemuan pertama kita adalah awal dari sebuah cerita yang
+                      tak pernah terbayangkan sebelumnya. Kini, langkah ini
+                      membawa kita lebih dekat.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="timeline-image"
+                  style="background-image: url(img/lamaran.jpeg)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Tunangan</h3>
+                    <span>5 juli 2024</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      alhamdulillah karena orang tua kami mendukung hubungan
+                      kami sepenuhnya, bertepatan dengan tanggal 5 juli 2024
+                      kami resmi bertunangan
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Memori Kisah Kami</span>
+            <h2>Galeri Foto</h2>
+          </div>
+        </div>
+
+        <div
+          class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center"
+        >
+          <div class="col mt-3">
+            <a
+              href="img/gallery/gal.jpeg"
+              data-toggle="lightbox"
+              data-caption="Basir $ Uum"
+              data-gallery="mygallery"
+            >
+              <img
+                src="img/gallery/gal.jpeg"
+                alt="Basir $ Uum"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="img/gallery/hero.jpg"
+              data-toggle="lightbox"
+              data-caption="Basir $ Uum"
+              data-gallery="mygallery"
+            >
+              <img
+                src="img/gallery/hero.jpg"
+                alt="Basir $ Uum"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp" class="rsvp">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
+          </div>
+        </div>
+
+        <form
+          class="row row-cols-md-auto g-3 align-items-center justify-content-center"
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbwiK7tum5EB_8cul1xN1WHJm06cFc60-Us7tDGdG1B0x59q5BgAnl2OKUXuLhs402yI/exec"
+          id="my-form-confirm"
+        >
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                name="nama"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="jumlah" class="form-label">Jumlah</label>
+              <input
+                type="number"
+                class="form-control"
+                id="jumlah"
+                name="jumlah"
+                min="1"
+                max="5"
+                length="1"
+                value="1"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="status" class="form-label">Konfirmasi</label>
+              <select name="status" id="status" class="form-select" required>
+                <option value="">Pilih salah satu</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 35px">
+            <button class="btn btn-primary">Kirim</button>
+          </div>
+        </form>
+
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-6">
+            <div class="text-center">
+              <h2 class="text-center">Kirim Ucapan</h2>
+              <p class="text-center">
+                Isi form di bawah ini untuk mengirim ucapan atau doa.
+              </p>
+            </div>
+            
+            <form
+              id="myForm"
+              method="POST"
+              action="https://script.google.com/macros/s/AKfycbxYiLfkvocfS93I7E_UmYzQTpe46yw0-871_6ijP5xffn0BQImAyyauor-1I0vVoOr2/exec"
+              class="container"
+            >
+              <div class="mb-3">
+                <label for="name" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="name" name="name" />
+              </div>
+              <div class="mb-3">
+                <label for="body" class="form-label">Ucapan/Doa</label>
+                <textarea
+                  class="form-control"
+                  id="body"
+                  name="body"
+                  required
+                ></textarea>
+              </div>
+              
+              <input type="hidden" id="dateNow" name="date" />
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div id="resultDiv" class="container">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gifts" class="gifts">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>ungkapan tanda kasih</span>
+            <h2>Kirim Hadiah</h2>
+          </div>
+        </div>
+
+        <div class="row justify-content-center text-center">
+          <div class="col-md-6">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="fw-bold">BCA</div>
+                <span class="copy-text" onclick="copyToClipboard('2640752907')"
+                  >2640752907</span
+                >
+                <span>Lailatul Umroh</span>
+              </li>
+              <li class="list-group-item">
+                <div class="fw-bold">BRI</div>
+                <span
+                  class="copy-text"
+                  onclick="copyToClipboard('805201004716535')"
+                  >805201004716535</span
+                >
+                <span>Muhammad Basir</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <small class="block">&copy;2025 Basir Uum Wedding.</small>
+            <small class="block">Template Owner Zidni, Redesign By Arjun Imut.</small>
+            <small class="block"
+              >Design And Code by
+              <a href="https://www.instagram.com/hadzidn" target="_blank"
+                >@hadzidn</a
+              ></small
+            >
+            <br />
+
+            <small class=""
+              >Original Back Song
+              <a
+                href="https://www.youtube.com/watch?v=xMJXt74yEbY"
+                target="_blank"
+                >DAVI SIUMBING - DI TEPIAN RINDU (OFFICIAL MUSIC VIDEO)</a
+              ></small
+            ><br />
+            <small class=""
+              >Photos Galery By
+              <a href="https://www.instagram.com/al.bastomii/" target="_blank"
+                >@al.bastomii</a
+              ></small
+            >
+            <ul class="mt-3">
+              <li>
+                <a href="https://www.instagram.com/hadzidn"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@ahmadzid1390"
+                  ><i class="bi bi-youtube"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://x.com/RosadiZidni"
+                  ><i class="bi bi-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/ahmad.z.rosadi.3"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="audio-container">
+      <audio id="song" autoplay loop>
+        <source src="audio/videoplayback.mp3#t=00:00:10" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <div class="audio-icon-wrapper" style="display: none">
+        <i class="bi bi-disc"></i>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+    <script>
+      // Set current date in hidden input on page load
+      $(document).ready(function () {
+        const today = new Date();
+        const formattedDate = today.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+        $("#dateNow").val(formattedDate);
+      });
+
+      $("#my-form-confirm").on("submit", function (e) {
+        e.preventDefault();
+        alert("Konfirmasi Terkirim"); // Confirm if this runs
+
+        $.ajax({
+          url: $(this).attr("action"),
+          type: "POST",
+          data: $(this).serialize(),
+          success: function (response) {
+            $("#resultDiv").load(window.location.href + " #resultDiv");
+            $("#myForm")[0].reset();
+            $(".form-control").val("");
+            $("#dateNow").val(formattedDate);
+            alert("Success.......");
+          },
+          error: function () {
+            alert("There was an error submitting the form.");
+          },
+        });
+      });
+      $("#myForm").on("submit", function (e) {
+        e.preventDefault();
+        alert("Pesan Terkirim"); // Confirm if this runs
+
+        $.ajax({
+          url: $(this).attr("action"),
+          type: "POST",
+          data: $(this).serialize(),
+          success: function (response) {
+            $("#resultDiv").load(window.location.href + " #resultDiv");
+            $("#myForm")[0].reset();
+            $(".form-control").val("");
+            $("#dateNow").val(formattedDate);
+            alert("Success.......");
+          },
+          error: function () {
+            alert("There was an error submitting the form.");
+          },
+        });
+      });
+      $.ajax({
+        url: "#", // Replace with your API URL
+        method: "GET",
+        success: function (response) {
+        // Sort by date in descending order (newest first)
+        response.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        let htmlContent = "";
+
+        response.forEach((item) => {
+            const date = item.date || "N/A";
+            const name = item.name || "Anonymous";
+            const body = item.body || "No comment";
+
+            htmlContent += `
+                <div class="comment row">
+                    <div class="comment-header col-4">
+                        <div class="user-details">
+                            <p class="user-name">${name}</p>
+                            <p class="comment-date">${date}</p>
+                        </div>
+                    </div>
+                    <div class="comment-body col-7" style="white-space: pre-wrap;">
+                        <p>${body}</p>
+                    </div>
+                </div>
+                <br>
+            `;
+        });
+
+        // Append the generated HTML to your container
+        $('#resultDiv').html(htmlContent);
+    },
+        error: function (error) {
+          console.log("Error:", error);
+        },
+      });
+    </script>
+    <script>
+      simplyCountdown(".simply-countdown", {
+        year: 2025, // required
+        month: 01, // required
+        day: 17, // required
+        hours: 8, // Default is 0 [0-23] integer
+        words: {
+          //words displayed into the countdown
+          days: { singular: "hari", plural: "hari" },
+          hours: { singular: "jam", plural: "jam" },
+          minutes: { singular: "menit", plural: "menit" },
+          seconds: { singular: "detik", plural: "detik" },
+        },
+      });
+
+      document
+        .querySelectorAll(".simply-seconds-section")
+        .forEach((element) => {
+          element.style.display = "none";
+        });
+    </script>
+
+    <script>
+      const stickyTop = document.querySelector(".sticky-top");
+      const offcanvas = document.querySelector(".offcanvas");
+
+      offcanvas.addEventListener("show.bs.offcanvas", function () {
+        stickyTop.style.overflow = "visible";
+      });
+
+      offcanvas.addEventListener("hidden.bs.offcanvas", function () {
+        stickyTop.style.overflow = "hidden";
+      });
+    </script>
+
+    <script>
+      const rootElement = document.querySelector(":root");
+      const audioIconWrapper = document.querySelector(".audio-icon-wrapper");
+      const audioIcon = document.querySelector(".audio-icon-wrapper i");
+      const song = document.querySelector("#song");
+      let isPlaying = false;
+
+      function disableScroll() {
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        window.onscroll = function () {
+          window.scrollTo(scrollTop, scrollLeft);
+        };
+
+        rootElement.style.scrollBehavior = "auto";
+      }
+
+      function enableScroll() {
+        window.onscroll = function () {};
+        rootElement.style.scrollBehavior = "smooth";
+        // localStorage.setItem('opened', 'true');
+        playAudio();
+        // Menghilangkan section dengan ID 'hero'
+        setTimeout(() => {
+          document.getElementById('hero').remove();
+        }, 1000);
+      }
+
+      function playAudio() {
+        song.volume = 0.1;
+        audioIconWrapper.style.display = "flex";
+        song.play();
+        isPlaying = true;
+      }
+
+      audioIconWrapper.onclick = function () {
+        if (isPlaying) {
+          song.pause();
+          audioIcon.classList.remove("bi-disc");
+          audioIcon.classList.add("bi-pause-circle");
+        } else {
+          song.play();
+          audioIcon.classList.add("bi-disc");
+          audioIcon.classList.remove("bi-pause-circle");
+        }
+
+        isPlaying = !isPlaying;
+      };
+
+      // if (!localStorage.getItem('opened')) {
+      //   disableScroll();
+      // }
+      disableScroll();
+    </script>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramValue = urlParams.get("to"); // Get 'testt' parameter value
+      document.getElementById("name").innerText = paramValue;
+    </script>
+
+    <script>
+      function copyToClipboard(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        alert("No Rekening Berhasil Tercopy Di Clipboard");
+      }
+    </script>
+  </body>
+</html>

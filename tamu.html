@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generate URL Tamu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row justify-content-center py-5">
+            <div class="col-md-10">
+                <h3>Generate URL untuk Tamu</h3>
+                <form id="generateUrlForm" method="post">
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="namaTamu" placeholder="Masukkan Nama Tamu">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Generate URL</button>
+                </form>
+
+                <!-- Link yang Dihasilkan -->
+                <div class="mt-4" id="generatedLink" style="display: none;">
+                    <h5>Link yang dapat dibagikan:</h5>
+                    <a href="" id="linkTamu" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3 (including Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Full jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            // Base URL yang akan digunakan untuk generate link
+            const baseUrl = "file:///C:/Users/belmore/Downloads/undangan-zidni/index.html?to="; // Ganti dengan base URL produksi yang sesuai
+
+            $('#generateUrlForm').submit(function(e){
+                e.preventDefault();
+                
+                // Ambil nama tamu dari input
+                var namaTamu = $('#namaTamu').val();
+
+                // Periksa apakah nama tamu kosong
+                if (!namaTamu) {
+                    alert("Masukkan nama tamu!");
+                    return;
+                }
+
+                // Generasi URL dengan nama tamu
+                var generatedUrl = baseUrl + encodeURIComponent(namaTamu);
+
+                // Tampilkan link yang sudah digenerate
+                $('#generatedLink').show();
+                $('#linkTamu').attr("href", generatedUrl).text(generatedUrl);
+                
+            });
+        });
+    </script>
+  </body>
+</html>
