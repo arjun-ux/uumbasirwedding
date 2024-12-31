@@ -343,15 +343,14 @@ body {
 }
 
 .rsvp button {
-  background-color: var(--pink);
-  color: white;
+  background-color: var(--white);
+  color: var(--bg);
   border: 1px solid var(--pink);
 }
 
 .rsvp button:hover {
   background-color: white;
-  color: var(--pink);
-  border: 1px solid white;
+  color: var(--bg);
 }
 
 footer {
