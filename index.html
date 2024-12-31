@@ -358,80 +358,50 @@
           <div class="col-md-8 col-10 text-center">
             <h2>Konfirmasi Kehadiran</h2>
             <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
+            <div class="d-none alert-hadir">
+              <h2>Terimakasih!</h2>
+              <p>Konfirmasi Kehadiran Dan Pesan Ucapan Anda Sudah Terkirim.</p>
+            </div>
           </div>
         </div>
 
         <form
-          class="row row-cols-md-auto g-3 align-items-center justify-content-center"
-          method="POST"
-          action="https://script.google.com/macros/s/AKfycbwiK7tum5EB_8cul1xN1WHJm06cFc60-Us7tDGdG1B0x59q5BgAnl2OKUXuLhs402yI/exec"
-          id="my-form-confirm"
-        >
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="nama" class="form-label">Nama</label>
-              <input
-                type="text"
-                class="form-control"
-                id="nama"
-                name="nama"
-                required
-              />
-            </div>
+          name="my-form-confirm"
+          class="container col-md-6 form-hadir">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nama</label>
+            <input type="text" class="form-control" id="namaUcapan" name="nama" />
           </div>
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="status" class="form-label">Konfirmasi</label>
-              <select name="status" id="status" class="form-select" required>
-                <option value="">Pilih salah satu</option>
-                <option value="Hadir">Hadir</option>
-                <option value="Tidak Hadir">Tidak Hadir</option>
-              </select>
-            </div>
+          <div class="mb-3">
+            <label for="status" class="form-label">Konfirmasi</label>
+            <select name="status" id="status" class="form-select" required>
+              <option value="">Pilih salah satu</option>
+              <option value="Hadir">Hadir</option>
+              <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
           </div>
+          <div class="mb-3">
+            <label for="body" class="form-label">Ucapan/Doa</label>
+            <textarea
+              class="form-control"
+              id="body"
+              name="ucapan"
+              required
+            ></textarea>
+          </div>
+          
+          <input type="hidden" id="dateNow" name="date" />
+
           <div class="col-12" style="margin-top: 35px">
-            <button class="btn btn-primary">Kirim</button>
+            <button class="btn btn-primary btn-kirim">Kirim</button>
+            <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+              <span role="status">Loading...</span>
+            </button>
           </div>
         </form>
 
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-6">
-            <div class="text-center">
-              <h2 class="text-center">Kirim Ucapan</h2>
-              <p class="text-center">
-                Isi form di bawah ini untuk mengirim ucapan atau doa.
-              </p>
-            </div>
-            
-            <form
-              id="myForm"
-              method="POST"
-              action="https://script.google.com/macros/s/AKfycbxYiLfkvocfS93I7E_UmYzQTpe46yw0-871_6ijP5xffn0BQImAyyauor-1I0vVoOr2/exec"
-              class="container"
-            >
-              <div class="mb-3">
-                <label for="name" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="name" name="name" />
-              </div>
-              <div class="mb-3">
-                <label for="body" class="form-label">Ucapan/Doa</label>
-                <textarea
-                  class="form-control"
-                  id="body"
-                  name="body"
-                  required
-                ></textarea>
-              </div>
-              
-              <input type="hidden" id="dateNow" name="date" />
-
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <div id="resultDiv" class="container">
-              
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
 
@@ -551,46 +521,64 @@
         $("#dateNow").val(formattedDate);
       });
 
-      $("#my-form-confirm").on("submit", function (e) {
-        e.preventDefault();
-        alert("Konfirmasi Terkirim"); // Confirm if this runs
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzv84zsJDDSRtAzC7kVG3_W2zv2JWz5uB9vp1E0i8USWHu7A-_gR7mXRk1gN0Q4EijDQw/exec'
+      const form = document.forms['my-form-confirm']
 
-        $.ajax({
-          url: $(this).attr("action"),
-          type: "POST",
-          data: $(this).serialize(),
-          success: function (response) {
-            $("#resultDiv").load(window.location.href + " #resultDiv");
-            $("#myForm")[0].reset();
-            $(".form-control").val("");
-            $("#dateNow").val(formattedDate);
-            alert("Success.......");
-          },
-          error: function () {
-            alert("There was an error submitting the form.");
-          },
-        });
-      });
-      $("#myForm").on("submit", function (e) {
-        e.preventDefault();
-        alert("Pesan Terkirim"); // Confirm if this runs
+      form.addEventListener('submit', e => {
+        e.preventDefault()
 
-        $.ajax({
-          url: $(this).attr("action"),
-          type: "POST",
-          data: $(this).serialize(),
-          success: function (response) {
+        const btnKirim = document.querySelector('.btn-kirim');
+        const btnLoading = document.querySelector('.btn-loading');
+        const alertHadir = document.querySelector('.alert-hadir');
+        const formHadir = document.querySelector('.form-hadir');
+        
+        btnKirim.classList.toggle('d-none');
+        btnLoading.classList.toggle('d-none');
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            btnKirim.classList.toggle('d-none');
+            btnLoading.classList.toggle('d-none');
+            formHadir.classList.toggle('d-none');
+            alertHadir.classList.toggle('d-none');
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+
+      const scriptURLu = 'https://script.google.com/macros/s/AKfycbzv84zsJDDSRtAzC7kVG3_W2zv2JWz5uB9vp1E0i8USWHu7A-_gR7mXRk1gN0Q4EijDQw/exec'
+      const formUcapan = document.forms['my-form-ucapan']
+
+      formUcapan.addEventListener('submit', e => {
+        e.preventDefault()
+
+        fetch(scriptURLu, { method: 'POST', body: new FormData(formUcapan)})
+          .then(response => {
+            console.log('success')
             $("#resultDiv").load(window.location.href + " #resultDiv");
-            $("#myForm")[0].reset();
-            $(".form-control").val("");
-            $("#dateNow").val(formattedDate);
-            alert("Success.......");
-          },
-          error: function () {
-            alert("There was an error submitting the form.");
-          },
-        });
-      });
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+
+      // $("#myForm").on("submit", function (e) {
+      //   e.preventDefault();
+      //   alert("Pesan Terkirim"); // Confirm if this runs
+
+      //   $.ajax({
+      //     url: $(this).attr("action"),
+      //     type: "POST",
+      //     data: $(this).serialize(),
+      //     success: function (response) {
+      //       $("#resultDiv").load(window.location.href + " #resultDiv");
+      //       $("#myForm")[0].reset();
+      //       $(".form-control").val("");
+      //       $("#dateNow").val(formattedDate);
+      //       alert("Success.......");
+      //     },
+      //     error: function () {
+      //       alert("There was an error submitting the form.");
+      //     },
+      //   });
+      // });
       $.ajax({
         url: "#", // Replace with your API URL
         method: "GET",
@@ -722,8 +710,10 @@
 
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      const paramValue = urlParams.get("to"); // Get 'testt' parameter value
+      const paramValue = urlParams.get("to");
       document.getElementById("name").innerText = paramValue;
+      $('#namaTamu').val(paramValue);
+      $('#namaUcapan').val(paramValue);
     </script>
 
     <script>
